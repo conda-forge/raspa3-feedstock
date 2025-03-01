@@ -22,7 +22,7 @@ requirements:
     - cmake
     - ninja
     - lld
-    - libcxx-devel  # [not win]
+    - libcxx-devel
   host:
     - libcxx
     - libcxxabi  # [linux]
