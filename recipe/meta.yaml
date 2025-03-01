@@ -23,15 +23,16 @@ requirements:
     - cmake
     - ninja
     - lld
+    - libgomp  # [linux]
+    - llvm-openmp  # [osx]
     - libcxx  # [win]
     - libcxx-devel  # [not win]
   host:
     - libcxx
     - libcxxabi  # [linux]
+    - libblas
+    - liblapack
     - hdf5
-    - lapack
-    - blas
-    - libopenblas
     - zlib
     - openssl
     - libcurl
