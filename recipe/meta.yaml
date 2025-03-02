@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -30,8 +30,9 @@ requirements:
   host:
     - libcxx
     - libcxxabi  # [linux]
-    - libblas
-    - liblapack
+    - blas
+    - lapack
+    - libopenblas  # [linux]
     - hdf5
     - zlib
     - openssl
