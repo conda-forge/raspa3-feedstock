@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -23,8 +23,7 @@ requirements:
     - cmake
     - ninja
     - lld
-    - libgomp  # [linux]
-    - llvm-openmp  # [osx]
+    - llvm-openmp
     - libcxx  # [win]
     - libcxx-devel  # [not win]
   host:
