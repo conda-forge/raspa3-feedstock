@@ -10,7 +10,6 @@ source:
   sha256: 9cb460a8057f49abc387c13bc17e468db12df10f1a7620ef91fffc6ae324691a
 
 build:
-  skip: true  # [win]
   number: 1
 
 requirements:
@@ -29,9 +28,8 @@ requirements:
   host:
     - libcxx
     - libcxxabi  # [linux]
-    - blas
-    - lapack
-    - libopenblas  # [linux]
+    - libblas
+    - liblapack
     - hdf5
     - zlib
     - openssl
