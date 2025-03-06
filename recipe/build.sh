@@ -3,12 +3,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR:
   cmake -B build --preset conda_raspa3 -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_TESTING=OFF
 else
   if [[ "${target_platform}" == "linux"* ]]; then
-    export OPENBLAS_USES_OPENMP=1
-    ldd $PREFIX/lib/libopenblas.so
-    ldd $PREFIX/lib/libblas.so
-    ls -lagh $PREFIX/lib/*blas*
-    ls -lagh $PREFIX/lib/*lapack*
-    cmake ${CMAKE_ARGS} -B build --preset conda_raspa3 -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_TESTING=OFF
+    cmake ${CMAKE_ARGS} -B build --preset conda_raspa3 -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_TESTING=OFF -DOpenBLAS_INCLUDE_DIRS=$PREFIX/include  -DOpenBLAS_LIBRARIES=$PREFIX/lib/libopenblas.0.so
   fi
   if [[ "${target_platform}" == osx-* ]]; then
     cmake ${CMAKE_ARGS} -B build --preset conda_raspa3 -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_OSX_ARCHITECTURES="arm64" -DBUILD_TESTING=OFF

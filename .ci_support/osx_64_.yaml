@@ -18,20 +18,22 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '19'
+fortran_compiler:
+- gfortran
+fortran_compiler_version:
+- '13'
 hdf5:
 - 1.14.3
 libaec:
 - '1'
-libblas:
-- 3.9.* *netlib
 libcurl:
 - '8'
-liblapack:
-- 3.9.* *netlib
 llvm_openmp:
 - '18'
 macos_machine:
 - x86_64-apple-darwin13.4.0
+openblas:
+- 0.3.*
 openssl:
 - '3'
 target_platform:
@@ -39,5 +41,6 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+  - fortran_compiler_version
 zlib:
 - '1'
