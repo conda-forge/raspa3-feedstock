@@ -17,19 +17,23 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
     - clang-tools
     - llvm-tools
     - cmake
     - ninja
     - lld
-    - llvm-openmp
+    - libgomp  # [linux]
+    - llvm-openmp  # [osx]
     - libcxx  # [win]
     - libcxx-devel  # [not win]
   host:
     - libcxx
     - libcxxabi  # [linux]
-    - libblas
-    - liblapack
+    - openblas
+    - libgomp  # [linux]
+    - llvm-openmp  # [osx]
+    - lapack
     - hdf5
     - zlib
     - openssl
@@ -38,6 +42,9 @@ requirements:
   run:
     - libcxx
     - libcxxabi  # [linux]
+    - openblas
+    - libgomp  # [linux]
+    - llvm-openmp  # [osx]
 
 test:
   commands:
