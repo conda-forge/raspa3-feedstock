@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://iraspa.org/wp-content/uploads/2025/03/v3.0.3.tar.gz
-  sha256: a906d739d2e622435794a5de2631b6b1129f089d4baa08ddf85f183de4de13ce
+  url: https://github.com/iRASPA/RASPA3/archive/v{{ version }}.tar.gz
+  sha256: f39ca0bedc3275b5b28b74763ec3f79a242a8ab046c327b00897b45e69cfa575
 
 build:
   number: 0
@@ -22,23 +22,19 @@ requirements:
     - cmake
     - ninja
     - lld
-    - libcxx-devel  # [unix]
+    - libcxx-devel  # [osx]
   host:
-    - libcxx  # [unix]
-    - libcxxabi  # [linux]
+    - libcxx  # [osx]
     - libgomp  # [linux]
     - llvm-openmp  # [not linux]
     - libblas
     - liblapack
-    - libopenblas  # [linux]
     - hdf5
     - zlib
     - openssl
     - libcurl
     - libaec
   run:
-    - libcxx  # [osx]
-    - libcxxabi  # [osx]
 
 test:
   commands:

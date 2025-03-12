@@ -28,10 +28,10 @@ libcurl:
 - '8'
 liblapack:
 - 3.9.* *netlib
+llvm_openmp:
+- '18'
 macos_machine:
 - x86_64-apple-darwin13.4.0
-openblas:
-- 0.3.*
 openssl:
 - '3'
 target_platform:
