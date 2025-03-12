@@ -5,7 +5,7 @@ MACOSX_SDK_VERSION:
 c_compiler:
 - clang
 c_compiler_version:
-- '19'
+- '18'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -17,19 +17,17 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '19'
-fortran_compiler:
-- gfortran
-fortran_compiler_version:
-- '13'
+- '18'
 hdf5:
 - 1.14.3
 libaec:
 - '1'
+libblas:
+- 3.9.* *netlib
 libcurl:
 - '8'
-llvm_openmp:
-- '18'
+liblapack:
+- 3.9.* *netlib
 macos_machine:
 - x86_64-apple-darwin13.4.0
 openblas:
@@ -41,6 +39,5 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-  - fortran_compiler_version
 zlib:
 - '1'

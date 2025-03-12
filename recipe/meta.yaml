@@ -17,8 +17,10 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - clang-tools
-    - llvm-tools
+    - clang-19  # [linux and osx]
+    - clangxx-19  # [linux and osx]
+    - clang-tools  # [linux and osx]
+    - llvm-tools  # [linux and osx]
     - cmake
     - ninja
     - lld
