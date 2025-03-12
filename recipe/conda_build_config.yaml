@@ -1,10 +1,12 @@
-c_compiler:
+c_compiler:  # [win]
+  - vs2022  # [win]
+cxx_compiler:  # [win]
+  - vs2022  # [win]
+c_compiler:  # [linux and osx]
   - clang  # [linux and osx]
-  - vs2022  # [win]
-c_compiler_version:
+c_compiler_version:  # [linux and osx]
   - 19  # [linux and osx]
-cxx_compiler:
+cxx_compiler:  # [linux and osx]
   - clangxx  # [linux and osx]
-  - vs2022  # [win]
-cxx_compiler_version:
+cxx_compiler_version:  # [linux and osx]
   - 19  # [linux and osx]
