@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/iRASPA/RASPA3/archive/v{{ version }}.tar.gz
-  sha256: 4e7a8ccbe170cd8c911751cbc336258a41990dac4788c37efd05a74089ebc96b
+  sha256: 1699b5885e5f63567338825c0c529c4371145a80024d21bf256d1353df0863ae
 
 build:
   # Prioritize builds with a higher microarch level.
@@ -29,6 +29,7 @@ requirements:
     - ninja
     - lld
     - libcxx-devel  # [osx]
+    - gtest
   host:
     - libcxx  # [osx]
     - libgomp  # [linux]
