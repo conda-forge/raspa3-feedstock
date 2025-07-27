@@ -1,5 +1,5 @@
 {% set name = "raspa3" %}
-{% set version = "3.0.7" %}
+{% set version = "3.0.8" %}
 {% set build = 0 %}
 
 
@@ -9,13 +9,13 @@ package:
 
 source:
   url: https://github.com/iRASPA/RASPA3/archive/v{{ version }}.tar.gz
-  sha256: d1936e16afd480d3289b56a50fcbc46d4a35d30e741c47b2468b6aea73751da0
+  sha256: 6164a9bfb83e964f245dfe53e81183d62dac84ca455963b4fa2bb7a0042227fe
 
 build:
   # Prioritize builds with a higher microarch level.
-  number: {{ build }}          # [not (unix and x86_64)]
-  number: {{ build + 100 }}    # [unix and x86_64 and microarch_level == 1]
-  number: {{ build + 300 }}    # [unix and x86_64 and microarch_level == 3]
+  number: {{ build }}  # [not (unix and x86_64)]
+  number: {{ build + 100 }}  # [unix and x86_64 and microarch_level == 1]
+  number: {{ build + 300 }}  # [unix and x86_64 and microarch_level == 3]
 
 requirements:
   build:
