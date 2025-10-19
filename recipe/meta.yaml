@@ -1,6 +1,6 @@
 {% set name = "raspa3" %}
-{% set version = "3.0.15" %}
-{% set build = 1 %}
+{% set version = "3.0.16" %}
+{% set build = 0 %}
 
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/iRASPA/RASPA3/archive/v{{ version }}.tar.gz
-  sha256: b120a9a6d675ed499b88b9c3c1d60779789337c79cd74cf636e1e1892ab56b09
+  sha256: 3be35a90415ea793118e231a6b1418e6f3d7064b059e8a53d4cd85d76e4798f7
 
 build:
   # Prioritize builds with a higher microarch level.
@@ -20,16 +20,16 @@ build:
 requirements:
   build:
     - x86_64-microarch-level {{ microarch_level }}  # [unix and x86_64]
-    - {{ stdlib('c') }}
+    - {{ stdlib('c') }}  # [linux]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - clang-tools  # [unix]
-    - llvm-tools  # [unix]
     - cmake
     - ninja
-    - lld
-    - libcxx-devel  # [osx]
     - gtest
+    - clang-tools  # [osx]
+    - llvm-tools  # [osx]
+    - lld  # [osx]
+    - libcxx-devel  # [osx]
   host:
     - libcxx  # [osx]
     - libgomp  # [linux]
