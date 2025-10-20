@@ -1,13 +1,11 @@
 c_compiler:
-- vs2022
-c_stdlib:
-- vs
+- vs2026
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2022
+- vs2026
 fftw:
 - '3'
 hdf5:

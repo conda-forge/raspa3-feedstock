@@ -20,7 +20,7 @@ build:
 requirements:
   build:
     - x86_64-microarch-level {{ microarch_level }}  # [unix and x86_64]
-    - {{ stdlib('c') }}  # [linux]
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
