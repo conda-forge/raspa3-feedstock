@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/iRASPA/RASPA3/archive/v{{ version }}.tar.gz
-  sha256: 69ad2f823fbdf845c0e8eba4548055ef87f7bf6f68d0c30d7d1c14656e952fcc
+  sha256: 0ea14c56c526eca7d37c802924b1468ef289e4c046cef1104c97f5390d00d5c5
 
 build:
   # Prioritize builds with a higher microarch level.
@@ -23,14 +23,14 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - clang-tools  # [unix]
+    - llvm-tools  # [unix]
     - cmake
     - ninja
-    - gtest
-    - clang-tools  # [osx]
-    - llvm-tools  # [osx]
-    - lld  # [osx]
-    - mold  # [linux]
+    - lld
     - libcxx-devel  # [osx]
+    - python  # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
     - libcxx  # [osx]
     - libgomp  # [linux]
@@ -42,11 +42,13 @@ requirements:
     - openssl
     - libcurl
     - libaec
+    - python
     - libopencl-devel
     - ocl-icd  # [linux]
     - khronos-opencl-icd-loader  # [osx and win]
     - fftw
   run:
+    - python
     - ocl-icd  # [linux]
     - khronos-opencl-icd-loader  # [osx and win]
     - ocl_icd_wrapper_apple  # [osx]
