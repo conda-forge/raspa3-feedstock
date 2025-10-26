@@ -29,8 +29,7 @@ requirements:
     - ninja
     - lld
     - libcxx-devel  # [osx]
-    - python  # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - gtest
   host:
     - libcxx  # [osx]
     - libgomp  # [linux]
@@ -42,13 +41,11 @@ requirements:
     - openssl
     - libcurl
     - libaec
-    - python
     - libopencl-devel
     - ocl-icd  # [linux]
     - khronos-opencl-icd-loader  # [osx and win]
     - fftw
   run:
-    - python
     - ocl-icd  # [linux]
     - khronos-opencl-icd-loader  # [osx and win]
     - ocl_icd_wrapper_apple  # [osx]
