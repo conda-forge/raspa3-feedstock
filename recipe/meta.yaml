@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/iRASPA/RASPA3/archive/v{{ version }}.tar.gz
-  sha256: fa4a4ae8883aa54dcf67dbcdb1be600eaeca92272bcc794ca1df7be66a210fb3
+  sha256: 41f56370f65f8954c0bfb4393086183f43e655d18511a2401544960003857f75
 
 build:
   # Prioritize builds with a higher microarch level.
@@ -25,10 +25,10 @@ requirements:
     - {{ compiler('cxx') }}
     - clang-tools  # [osx]
     - llvm-tools  # [osx]
-    - cmake
-    - ninja
     - lld  # [osx]
     - libcxx-devel  # [osx]
+    - cmake
+    - ninja
     - gtest
   host:
     - libcxx  # [osx]
