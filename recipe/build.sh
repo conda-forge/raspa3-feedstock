@@ -1,5 +1,17 @@
 #!/bin/bash
 
+rm -rf .git
+rm -rf /usr/lib/jvm
+rm -rf /usr/share/dotnet
+rm -rf /usr/share/swift
+rm -rf /usr/local/.ghcup
+rm -rf /usr/local/julia*
+rm -rf /usr/local/lib/android
+rm -rf /usr/local/share/chromium
+rm -rf /opt/microsoft /opt/google
+rm -rf /usr/local/share/powershell
+rm -rf /opt/hostedtoolcache
+
 if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
   if [[ "${target_platform}" == linux* ]]; then
     cmake -B build --preset=linux_conda_raspa3 -DCMAKE_POLICY_VERSION_MINIMUM=3.32
