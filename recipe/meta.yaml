@@ -23,9 +23,9 @@ requirements:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - clang-tools  # [unix]
-    - llvm-tools  # [unix]
-    - lld  # [unix]
+    - clang-tools  # [osx]
+    - llvm-tools  # [osx]
+    - lld  # [osx]
     - libcxx-devel  # [osx]
     - cmake
     - ninja
