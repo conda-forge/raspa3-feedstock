@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/iRASPA/RASPA3/archive/v{{ version }}.tar.gz
-  sha256: 6adbd61244579a0d792921f99826667c95e6d3eaaa36d139f86fef6ff139d5d3
+  sha256: bf0cf5f3fb7dcfd8403f20d8c6b06f2d649846a510dfbc2290c29cd905345d3e
 
 build:
   # Prioritize builds with a higher microarch level.
@@ -58,7 +58,7 @@ about:
   home: https://github.com/iraspa/raspa3
   summary: 'A general purpose classical simulation package'
   description: |
-    RASPA is a software package for simulating adsorption and 
+    RASPA is a software package for simulating adsorption and
     diffusion of molecules in flexible nanoporous materials. 
     The code implements the latest state-of-the-art algorithms 
     for Molecular Dynamics and Monte Carlo in various ensembles 
