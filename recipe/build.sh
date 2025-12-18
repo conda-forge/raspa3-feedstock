@@ -43,3 +43,22 @@ else
     ninja -C build install -v -j1
   fi
 fi
+
+# third stage for linux cross-compilation
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
+  if [[ "${target_platform}" == linux* ]]; then
+    rm -rf build
+    cmake -B build --preset=linux_conda_raspa3_gcc -DCMAKE_POLICY_VERSION_MINIMUM=3.32 -DBUILD_APP=false -DBUILD_CLI=false -DBUILD_TESTING=true
+    ninja -C build install -v -j1
+  fi
+else
+  if [[ "${target_platform}" == linux-aarch64 ]]; then 
+    rm -rf build
+    cmake -B build --preset=linux_conda_raspa3_gcc ${CMAKE_ARGS} -DCMAKE_POLICY_VERSION_MINIMUM=3.32 -DBUILD_APP=false -DBUILD_CLI=false -DBUILD_TESTING=true
+    ninja -C build install -v -j1
+  elif [[ "${target_platform}" == linux-ppc64le ]]; then
+    rm -rf build
+    cmake -B build --preset=linux_conda_raspa3_gcc ${CMAKE_ARGS} -DCMAKE_POLICY_VERSION_MINIMUM=3.32 -DBUILD_APP=false -DBUILD_CLI=false -DBUILD_TESTING=true
+    ninja -C build install -v -j1
+  fi
+fi
