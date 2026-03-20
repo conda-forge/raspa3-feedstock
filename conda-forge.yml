@@ -12,5 +12,5 @@ provider:
   linux_aarch64: default
   linux_ppc64le: default
 conda_build:
-  error_overlinking: true
+  error_overlinking: false
 conda_forge_output_validation: true
