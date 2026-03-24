@@ -1,17 +1,25 @@
 c_compiler:
-- vs2022
+- gcc
+c_compiler_version:
+- '>=15.2.0'
 c_stdlib:
-- vs
+- sysroot
+c_stdlib_version:
+- '2.17'
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2022
+- gxx
+cxx_compiler_version:
+- '>=15.2.0'
+docker_image:
+- quay.io/condaforge/linux-anvil-x86_64:alma9
 fftw:
 - '3'
 hdf5:
-- 1.14.3
+- 1.14.6
 libaec:
 - '1'
 libblas:
@@ -25,6 +33,9 @@ microarch_level:
 openssl:
 - '3.5'
 target_platform:
-- win-64
+- linux-ppc64le
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
 zlib:
 - '1'

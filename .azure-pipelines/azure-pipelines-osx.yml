@@ -5,18 +5,33 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-15
+    vmImage: $(VMIMAGE)
   strategy:
     matrix:
-      osx_64_microarch_level1:
-        CONFIG: osx_64_microarch_level1
+      osx_64_hdf51.14.6microarch_level1:
+        CONFIG: osx_64_hdf51.14.6microarch_level1
         UPLOAD_PACKAGES: 'True'
-      osx_64_microarch_level3:
-        CONFIG: osx_64_microarch_level3
+        VMIMAGE: macOS-15
+      osx_64_hdf51.14.6microarch_level3:
+        CONFIG: osx_64_hdf51.14.6microarch_level3
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_:
-        CONFIG: osx_arm64_
+        VMIMAGE: macOS-15
+      osx_64_hdf52microarch_level1:
+        CONFIG: osx_64_hdf52microarch_level1
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+      osx_64_hdf52microarch_level3:
+        CONFIG: osx_64_hdf52microarch_level3
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+      osx_arm64_hdf51.14.6:
+        CONFIG: osx_arm64_hdf51.14.6
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+      osx_arm64_hdf52:
+        CONFIG: osx_arm64_hdf52
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
   timeoutInMinutes: 360
   variables: {}
 
