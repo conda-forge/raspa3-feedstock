@@ -1,5 +1,5 @@
 {% set name = "raspa3" %}
-{% set version = "3.0.24" %}
+{% set version = "3.0.25" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/iRASPA/RASPA3/archive/v{{ version }}.tar.gz
-  sha256: faa08dbe84a862ae949cb73fda428a4b8eda89b19a18f6b94f6db135c2fc70ee
+  sha256: 0a1094081a506a462264e550e0b0cf645c5f04a56673b616f13515aca3c5277b
 
 build:
   # Prioritize builds with a higher microarch level.
