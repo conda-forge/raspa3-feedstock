@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/iRASPA/RASPA3/archive/v{{ version }}.tar.gz
-  sha256: 0a1094081a506a462264e550e0b0cf645c5f04a56673b616f13515aca3c5277b
+  sha256: 245716e14c274386f6faf4aa745e74333ac5d223f14ba0efbaafe7244baf60f1
 
 build:
   # Prioritize builds with a higher microarch level.
