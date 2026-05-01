@@ -8,8 +8,12 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_:
-        CONFIG: win_64_
+      win_64_microarch_level1:
+        CONFIG: win_64_microarch_level1
+        UPLOAD_PACKAGES: 'True'
+        store_build_artifacts: false
+      win_64_microarch_level3:
+        CONFIG: win_64_microarch_level3
         UPLOAD_PACKAGES: 'True'
         store_build_artifacts: false
   timeoutInMinutes: 360
